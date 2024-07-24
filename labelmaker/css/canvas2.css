@@ -1,0 +1,187 @@
+/* .std .editor-container{
+    width: 1060px;
+    height: 1060px;
+    background-color: rgb(30, 177, 128);
+    position: relative;
+} */
+/* #editor{
+    background-color: bisque;
+    width: 1000px;
+    height: 1000px;
+    position: relative;
+} */
+.canvas {
+    color: #404040;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    box-sizing: border-box;
+    grid-area: canvas;
+    overflow: auto;
+    z-index: 1;
+}
+
+.c1 {
+    color: #404040;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    box-sizing: border-box;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.c2 {
+    color: #404040;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    box-sizing: border-box;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.c3 {
+    color: #404040;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.c4 {
+    color: #404040;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.c5 {
+    color: #404040;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    min-width: 250px;
+    overflow: hidden;
+    background: #f1f1f1;
+}
+
+.c6 {
+    color: #404040;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    cursor: unset;
+}
+
+.c7 {
+    color: #404040;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    cursor: unset;
+    box-sizing: border-box;
+    position: absolute;
+    transform-origin: 0px 0px;
+    width: 380px;
+    height: 380px;
+    left: 537.6px;
+    top: 81.2px;
+}
+
+.c8 {
+    color: #404040;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    cursor: unset;
+    box-sizing: border-box;
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    overflow: visible;
+    left: 60px;
+    top: 60px;
+}
+
+.c9 {
+    color: #404040;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    cursor: unset;
+    box-sizing: border-box;
+    z-index: 0;
+    filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.06)) drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.08));
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.c10 {
+    color: #404040;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    cursor: unset;
+    visibility: visible;
+    box-sizing: border-box;
+    z-index: 1;
+    -webkit-user-select: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+}
+
+.c11 {
+    color: #404040;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    cursor: unset;
+    visibility: visible;
+    -webkit-user-select: none;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}

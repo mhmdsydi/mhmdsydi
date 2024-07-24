@@ -1,0 +1,98 @@
+ 
+  
+   
+  
+  .select_wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    user-select: none;
+   
+    border-radius: 5px;
+  }
+  
+  .select_wrap .ul_default {
+    background: white;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+     
+  }
+  .select_wrap .ul_select {
+    position: absolute;
+   
+    left: 0;
+    width: 100%;
+    background: white;
+    border-radius: 5px;
+    
+    margin-top: 1px;
+    transition: all 0.3s ease;
+    opacity: 0;
+  }
+  
+  .select_wrap.active .ul_select {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  
+  .select_wrap .ul_default:before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 6px);
+    right: 12px;
+    width: 8px;
+    height: 8px;
+    border: 2px solid;
+    border-color: transparent transparent #555555 #555555;
+    transform: rotate(-45deg);
+  }
+  
+  .select_wrap.active .ul_default:before {
+    top: calc(50% - 3px);
+    transform: rotate(-225deg);
+  }
+  
+ 
+  .select_wrap .ul_select li {
+    cursor: pointer;
+    border: 1px solid #ccc;
+  }
+  .select_wrap .ul_select li:not(:last-child) {
+    border-bottom: none;
+    
+  }
+  
+  .select_wrap li {
+    display: flex;
+    align-items: center;
+    color:#222222;
+    height: 32px;
+    padding: 6px 36px 6px 12px;
+   
+  }
+  
+
+  .select_wrap .ul_select li:hover{
+    background-color: #fff4dd;
+  }
+  
+  .select_wrap .ul_select li:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .select_wrap .ul_select li:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  .select_wrap .ul_select li:first-child:hover {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .select_wrap .ul_select li:last-child:hover {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+ 

@@ -1,0 +1,199 @@
+/**
+ * @name r-Tooltip
+ * @description Tooltip based on an html attribute (data-r-tooltip)
+ * 
+ * @markup
+ * <div class="r-Tooltip" data-r-tooltip="Tooltip">Hover me</div>
+ * <div class="r-Tooltip r-Tooltip--top" data-r-tooltip="Tooltip">Hover me (top)</div>
+ * <div class="r-Tooltip r-Tooltip--top r-Tooltip--visible" data-r-tooltip="Tooltip">visible on top</div>
+ * <div class="r-Tooltip r-Tooltip--right" data-r-tooltip="Tooltip">Hover me (right)</div>
+ * <div class="r-Tooltip r-Tooltip--right r-Tooltip--visible" data-r-tooltip="Tooltip">visible on right</div>
+ * <div class="r-Tooltip r-Tooltip--bottom" data-r-tooltip="Tooltip">Hover me (bottom)</div>
+ * <div class="r-Tooltip r-Tooltip--bottom r-Tooltip--visible" data-r-tooltip="Tooltip">visible on bottom</div>
+ * <div class="r-Tooltip r-Tooltip--left" data-r-tooltip="Tooltip">Hover me (left)</div>
+ * <div class="r-Tooltip r-Tooltip--left r-Tooltip--visible" data-r-tooltip="Tooltip">visible on left</div>
+ * <div class="r-Tooltip r-Tooltip--top r-Tooltip--visible" data-r-tooltip="Lot's of content in the tooltip (auto wrap)">auto wrap</div>
+ * <div class="r-Tooltip r-Tooltip--top r-Tooltip--nowrap r-Tooltip--visible" data-r-tooltip="Lot's of content in the tooltip (nowrap)">nowrap</div>
+ */
+:root {
+  --r-Tooltip-zIndex: 1000;
+  --r-Tooltip-backgroundColor: #383838;
+  --r-Tooltip-margin: .5rem;
+
+  --r-Tooltip-arrow-size: .375rem;
+}
+
+.r-Tooltip {
+  position: relative;
+  display: inline-block;
+  transform: translate3d(0, 0, 0);
+}
+
+.r-Tooltip::before,
+.r-Tooltip::after {
+  z-index: var(--r-Tooltip-zIndex);
+  pointer-events: none;
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+  transition: .3s ease;
+}
+
+  .r-Tooltip--visible::before,
+  .r-Tooltip--visible::after,
+  .r-Tooltip:hover::before,
+  .r-Tooltip:hover::after,
+  .r-Tooltip:focus::before,
+  .r-Tooltip:focus::after {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* tooltip content */
+  .r-Tooltip::before {
+    content: attr(data-r-tooltip);
+
+    font-size: .83333rem;
+    line-height: 1.5625rem;
+    margin: 0;
+    padding: 0 .5rem;
+
+    color: #fff;
+    background: var(--r-Tooltip-backgroundColor);
+    text-shadow: 0 -1px 0 #000;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, .3);
+    letter-spacing: 0.5px;
+    border-radius: 2px;
+  }
+
+    .r-Tooltip--nowrap::before { white-space: nowrap; }
+    .r-Tooltip--centerText::before { text-align: center; }
+
+  /* tooltip arrow */
+  .r-Tooltip::after {
+    content: "";
+    z-index: calc(var(--r-Tooltip-zIndex) + 1);
+    position: absolute;
+    border: var(--r-Tooltip-arrow-size) solid transparent;
+    background: transparent;
+  }
+
+  /**
+   * Positions
+   */
+
+    /**
+     * Top
+     */
+    .r-Tooltip--top::before,
+    .r-Tooltip--top::after {
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .r-Tooltip--top::before {}
+
+      .r-Tooltip--visible.r-Tooltip--top::before,
+      .r-Tooltip--top:hover::before,
+      .r-Tooltip--top:focus::before {
+        margin-bottom: calc(var(--r-Tooltip-arrow-size) * 1 + var(--r-Tooltip-margin));
+      }
+
+    .r-Tooltip--top::after {
+      margin-bottom: calc(var(--r-Tooltip-arrow-size) * -2);
+      border-top-color: var(--r-Tooltip-backgroundColor);
+    }
+
+      .r-Tooltip--visible.r-Tooltip--top::after,
+      .r-Tooltip--top:hover::after,
+      .r-Tooltip--top:focus::after {
+        margin-bottom: calc(var(--r-Tooltip-arrow-size) * -1 + var(--r-Tooltip-margin));
+      }
+
+    /**
+     * Bottom
+     */
+    .r-Tooltip--bottom::before,
+    .r-Tooltip--bottom::after {
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .r-Tooltip--bottom::before {}
+
+      .r-Tooltip--visible.r-Tooltip--bottom::before,
+      .r-Tooltip--bottom:hover::before,
+      .r-Tooltip--bottom:focus::before {
+        margin-top: calc(var(--r-Tooltip-arrow-size) * 1 + var(--r-Tooltip-margin));
+      }
+
+    .r-Tooltip--bottom::after {
+      margin-top: calc(var(--r-Tooltip-arrow-size) * -2);
+      border-bottom-color: var(--r-Tooltip-backgroundColor);
+    }
+
+      .r-Tooltip--visible.r-Tooltip--bottom::after,
+      .r-Tooltip--bottom:hover::after,
+      .r-Tooltip--bottom:focus::after {
+        margin-top: calc(var(--r-Tooltip-arrow-size) * -1 + var(--r-Tooltip-margin))
+      }
+
+    /**
+     * Left
+     */
+    .r-Tooltip--left::before,
+    .r-Tooltip--left::after {
+      right: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .r-Tooltip--left::before {}
+
+      .r-Tooltip--visible.r-Tooltip--left::before,
+      .r-Tooltip--left:hover::before,
+      .r-Tooltip--left:focus::before {
+        margin-right: calc(var(--r-Tooltip-arrow-size) * 1 + var(--r-Tooltip-margin));
+      }
+
+    .r-Tooltip--left::after {
+      margin-right: calc(var(--r-Tooltip-arrow-size) * -2);
+      border-left-color: var(--r-Tooltip-backgroundColor);
+    }
+
+      .r-Tooltip--visible.r-Tooltip--left::after,
+      .r-Tooltip--left:hover::after,
+      .r-Tooltip--left:focus::after {
+        margin-right: calc(var(--r-Tooltip-arrow-size) * -1 + var(--r-Tooltip-margin))
+      }
+
+    /**
+     * Right
+     */
+    .r-Tooltip--right::before,
+    .r-Tooltip--right::after {
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .r-Tooltip--right::before {}
+
+      .r-Tooltip--visible.r-Tooltip--right::before,
+      .r-Tooltip--right:hover::before,
+      .r-Tooltip--right:focus::before {
+        margin-left: calc(var(--r-Tooltip-arrow-size) * 1 + var(--r-Tooltip-margin));
+      }
+
+    .r-Tooltip--right::after {
+      margin-left: calc(var(--r-Tooltip-arrow-size) * -2);
+      border-right-color: var(--r-Tooltip-backgroundColor);
+    }
+
+      .r-Tooltip--visible.r-Tooltip--right::after,
+      .r-Tooltip--right:hover::after,
+      .r-Tooltip--right:focus::after {
+        margin-left: calc(var(--r-Tooltip-arrow-size) * -1 + var(--r-Tooltip-margin))
+      }

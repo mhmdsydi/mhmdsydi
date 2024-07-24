@@ -1,0 +1,267 @@
+* {
+    font-family: isans;
+}
+.lm_main {
+    background-color: #f9f7f7;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    font-size: 14px;
+}
+.lmRight {
+    background-color: #242729;
+    flex-basis: 76px;
+    font-size: 1em;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll;
+}
+.lmRight::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+._lm .mnuItem {
+    display: block;
+    padding: 10px 0 6px 0;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+._lm .mnuItemActive {
+    background-color: #424753;
+    color: #07cdea;
+}
+._lm .mnuItem svg {
+    width: 35px;
+    fill: #fff;
+    color: white;
+}
+._lm .mnuItemActive svg {
+    width: 35px;
+    fill: #07cdea;
+    color: #07cdea;
+}
+._lm .mnuItem .lmRightlabel {
+    margin-top: -5px;
+}
+._lm .leftContextMenu {
+    background-color: #424753;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    color: #ffffff;
+    padding: 0 16px;
+    display: none;
+}
+._lm .lm_contextTitle {
+    min-height: 75px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 220px;
+    font-size: 1.1rem;
+}
+._lm .lm_btnexit {
+    width: 30px;
+    height: 30px;
+    color: #ffffff;
+    cursor: pointer;
+    fill: transparent;
+}
+._lm .lm_btnexit:hover {
+    fill: #88888888;
+    transform: scale(1.1);
+}
+._lm .lm_right {
+    background-color: #edf0f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+
+.w90 {
+    width: 90%;
+}
+/* --------------------------------- Pan */
+._lm .lm_pan {
+    width: 10cm;
+    height: 6cm;
+    font-size: 36px;
+    background-color: white;
+    border: solid 1px #66cff3;
+    position: relative;
+}
+._lm .lm_pan .lm_obj {
+    position: absolute;
+    left: 0;
+    top: 0;
+    touch-action: none;
+    border: solid 1px transparent;
+    z-index: 1;
+}
+._lm .lm_pan .lm_Element_Text {
+    -webkit-text-stroke: 0px red; /* width and color */
+    color: black;
+    font-size: 18px;
+}
+._lm .lm_pan .Target {
+    border: solid 1px #66cff3;
+    cursor: move;
+}
+._lm .lm_pan .lm_extra {
+    position: absolute;
+    touch-action: none;
+    border-radius: 50%;
+
+    width: 18px;
+    height: 18px;
+    left: 50%;
+    top: 100%;
+    margin-top: 10px;
+    border: solid 1px transparent;
+    font-size: 9px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+}
+._lm .lm_pan .lm_btnDelete {
+    background-color: #ff1010;
+    transform: translate(70%, 0);
+}
+._lm .lm_pan .lm_btnLock {
+    background-color: #07cdea;
+    transform: translate(-50%, 0);
+}
+._lm .lm_pan .lm_btnEdit {
+    background-color: #07cdea;
+    transform: translate(-170%, 0);
+}
+._lm .lm_pan i {
+    cursor: pointer;
+}
+/* ---------------------------------  Context Menu Text */
+
+._lm textarea {
+    writing-mode: horizontal-tb !important;
+    cursor: text;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    background-color: field;
+    column-count: initial !important;
+    margin: 0em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    padding: 2px;
+}
+._lm .leftContextMenu textarea {
+    width: 300px;
+    height: 100px;
+    border-radius: 4px;
+    font-size: 1.15em;
+    padding: 6.5px;
+}
+._lm .selectors-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+._lm .lm_context_text select {
+    border-radius: 4px;
+    padding: 2px 8px;
+}
+._lm #drpFontSize {
+    padding-left: 30px;
+}
+._lm #drpFontName {
+    padding-left: 60px;
+}
+._lm .style-alignment-options {
+    width: 90%;
+    height: 30px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    justify-content: space-between;
+}
+._lm .style-alignment-options > div {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+._lm .style-alignment-options > div > div {
+    width: 30px;
+    height: 30px;
+}
+._lm .style-alignment-options input {
+    display: none;
+}
+._lm .style-alignment-options label {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+._lm .style-alignment-options svg {
+    display: inline-block;
+    width: 1em;
+    height: 1.15em;
+    overflow: visible;
+    vertical-align: -0.125em;
+}
+div_ {
+    border: solid 1px #ff000088;
+}
+._lm input[type="color"] {
+    border-radius: 4px;
+}
+._lm .style-color-options {
+    width: 90%;
+    margin: 0 auto 20px auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1em;
+}
+.range-wrap input {
+    margin: 10px 5% 20px 5%;
+}
+/* ---------------------------------  Begin innerLoading */
+.innerLoading {
+    position: relative;
+}
+.innerLoading:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #00000088;
+}
+.innerLoading:after {
+    content: "";
+    position: absolute;
+    /* transform not work with animation */
+    left: calc(50% - 0.5em);
+    top: calc(50% - 0.5em);
+    height: 1em;
+    width: 1em;
+    border: 2px solid #eeeeee;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-radius: 50%;
+    opacity: 1;
+    animation: 0.8s linear infinite rotate;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

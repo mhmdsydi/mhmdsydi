@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'ptsans';
+    src: url('../font/PTSans-Regular.woff2') format('woff2'),
+        url('../font/PTSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+    
+button, div, p, input, span, a {
+  /* outline: solid 0.5px #ff000022;   */
+font-family: tahoma, ptsans;
+font-size: 14px;
+ 
+}
+.std i{
+    font-size: 16px;
+}
+.std {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: min-content min-content 1fr min-content;
+    grid-template-areas:
+        "header header"
+        "sidebar topbar"
+        "sidebar canvas"
+        "sidebar bottombar";
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #f1f1f1;
+    min-height: 0;
+
+}
+
+.std .sidebar {
+    background-color: #ffffff;
+    border-right: solid 1px #0000001a;
+    grid-area: sidebar;
+    display: flex;
+}
+
+.std .bottombar {
+    background-color: #ffffff;
+    border-top: solid 1px #0000001a;
+    grid-area: bottombar;
+    z-index: 10;
+}
+
+.std .topbar {
+    background-color: #ffffff;
+    border-bottom: solid 1px #0000001a;
+    grid-area: topbar;
+    z-index: 10;
+}
+

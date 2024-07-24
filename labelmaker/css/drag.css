@@ -1,0 +1,77 @@
+.std .Target {
+    outline: solid 2px #4d9ee0;
+    cursor: move;
+}
+.std  .lm_btnDelete {
+    background-color: #ff1010;
+    transform: translate(70%, 0);
+}
+.std  .lm_btnRotate {
+   
+   
+    display: inline-block;
+   
+    transform: translate(-50%, 0) rotate(45deg);
+    width: 21px;
+    height: 21px;
+    background: white;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+    pointer-events: all;
+    color: black;
+    padding: 3px;
+    position: absolute;
+    touch-action: none;
+    border-radius: 50%;
+    left: 50%;
+    top: 100%;
+    margin-top: 10px;
+    border: solid 1px transparent;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: normal;
+}
+.std  .lm_btnEdit {
+    background-color: #07cdea;
+    transform: translate(-170%, 0);
+}
+
+.std .lm_extra {
+    position: absolute;
+    touch-action: none;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    left: 50%;
+    top: 100%;
+    margin-top: 10px;
+    border: solid 1px transparent;
+    font-size: 9px;
+    font-weight: bold;
+    
+    cursor: pointer;
+}
+.std  .tdot {   
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+    pointer-events: all;
+    left: -5px;
+    top: -5px;
+    visibility: inherit;
+    transform: scale(0.871988, 0.871988);
+    cursor: nwse-resize;
+    z-index: 1000;
+}
+.std  .tdot.b-r{
+    left: calc(100% - 5px);
+    top: calc(100% - 5px);
+}
+.std  .tdot.b-l{
+    top: calc(100% - 5px);
+}
+.std  .tdot.t-r{
+    left: calc(100% - 5px);
+}

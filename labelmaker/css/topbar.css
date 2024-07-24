@@ -1,0 +1,123 @@
+.std .topbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+}
+.std .topbar > div > ul{
+    display: flex;
+    align-items: center;
+}
+.std .topbar > div:nth-child(2) > ul{
+   margin-right: 16px;
+}
+.std .topbar > div > ul > li{
+    display: flex;
+    align-items: center;
+    /* gap: 10px; */
+}
+.std .topbar > div:first-child > ul > li{
+    gap: 10px;
+}
+.std .topbar > div:last-child > ul > li{
+    gap: 10px;
+}
+.std .topbar > div > ul > li:not(:last-child){
+    border-right: 1px solid #dcdcdc;
+    padding-right: 12px;
+    margin-right: 12px;
+}
+.std .btnLbl{
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: Tahoma, verdana;
+    
+}
+.std .btnLbl:hover{
+    box-shadow: 0 0 0 3px #ecf3fe;
+}
+
+.std .btnLbl span{
+    font-size: inherit;
+    font-family: inherit;
+    color: #808080;
+    margin: 0 8px;
+}
+.std .btnLbl input{
+    padding: 8px;
+    width: 65px;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+    background-color: transparent;
+    border-left: solid 1px #ccc;
+}
+.std .divColor{
+    background-color: transparent;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    position: relative;
+}
+.std .divColorHandler{
+    border-radius: 4px;
+    background-color: #FFEECC;
+    border: solid 1px #dcdcdc;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+}
+.std .divColorPicker{
+    position: absolute;
+    top: 47px;
+    display: inline-block;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, .15);
+    transform: translateX(calc(-50% + 18px));
+}
+.std .labelOnly{
+    color: #565656;
+    font-size: 15px;
+}
+.std .noColor{
+    border:solid 1px #d9d9d9;
+    background: linear-gradient(to top left, #fff 46%, #f00 47%, #f00 53%, #fff 54%);
+}
+.std .transparentBox{
+    background: linear-gradient(to top left, #fff 46%, #f00 47%, #f00 53%, #fff 54%);
+}
+.std .a-color-picker-row-label
+{
+    padding-top: 40px;
+    position: relative;
+}
+.std .a-color-picker-row-label::before{
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    line-height: 1.5625rem;
+    color: #808080;
+    padding: 8px 14px 4px 14px;
+    letter-spacing: 0.5px;
+    font-size: 11px;
+    color: #606060;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+     
+}
+.std .divSelect{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.std #ul_element_menu{
+    /* display: none; */
+}

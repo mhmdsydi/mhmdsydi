@@ -1,0 +1,83 @@
+.std .sidebar > ul{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        width: 81px;
+        background: #fff;
+        z-index: 2;
+        border-right: solid 1px #0000001a;
+}
+.std .sidebar > ul > li{
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 80px;
+}
+.std .sidebar > ul > li > button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 68px;
+    height: 68px;
+    text-align: center;
+    font-size: 12px;
+    /* font-weight: bold; */
+    color: #404040;
+    border: 0;
+    border-radius: 4px;
+    background: white;
+    line-height: 1;
+    cursor: pointer;
+    outline: 0;
+    opacity: 1;
+}
+.std .sidebar > ul > li > button:hover{
+    background: #dddddd;
+}
+.std .sidebar > ul > li > button > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 10px 0;
+}
+.std .sidebar > ul > li > button > div > i{
+    font-size: 24px;
+}
+.std .sidebar .sidebar-panel{
+    padding: 20px 0px 5px 20px;
+    display: flex;
+    flex-direction: column;
+    border-right: solid 1px #0000001a;
+    display: none;
+    min-width: 200px;
+}
+.std .sidebar .sidebar-panel .sidebar-panel-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.std .sidebar h3{
+    font-size: 18px;
+    color: #444444;
+    font-weight: 700;
+}
+.std .sidebar .sidebar-panel .sidebar-panel-body{
+        padding: 0 20px 20px 20px;
+        margin-left: -20px;
+        overflow-y: overlay;
+        overflow-x: hidden;
+        flex-grow: 1;
+        scrollbar-width: thin;
+        scrollbar-color: #ccc #f3f3f3;
+        height: 100%;
+       
+} 
+    
