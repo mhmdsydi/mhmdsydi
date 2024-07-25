@@ -91,10 +91,6 @@ assignComponentToObjects = function() {
             }
         }
     });
-    $('#range_zoom').val(100);
-    $('#range_zoom_label').html('100%');  
-    $('#txtEditorW').val(frame.w);
-    $('#txtEditorH').val(frame.h);
-    $("#ulFrameUnit li[value='"+frame.unit+"']").click();
+    
    
 }

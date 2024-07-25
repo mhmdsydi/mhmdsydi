@@ -49,3 +49,8 @@ const requestWakeLock = async () => {
     //---
 })(jQuery);
 
+//
+const round2 = function(num)
+{
+    return Math.round((num + Number.EPSILON) * 100) / 100;
+}

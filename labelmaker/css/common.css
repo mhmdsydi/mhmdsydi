@@ -130,3 +130,18 @@
 .std .btnMenuItem:hover{
     background-color: #e0e0e0;
 }
+.std #forUnitRatioPixelMM{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 1mm;
+    width: 200mm;
+    background-color: red;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    
+}
+.std .disable{
+    color: #aaaaaa;
+}

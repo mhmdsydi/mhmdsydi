@@ -11,8 +11,8 @@ function setFrameDimension(w, h) {
     // calc left, top
     w = w + 60
     h = h + 60
-    let hParent = parseInt($('#parent_frame').height());
-    let wParent = parseInt($('#parent_frame').width());
+    let hParent = parseInt($('#parent_frame').outerHeight());
+    let wParent = parseInt($('#parent_frame').outerWidth());
     let top = h > hParent ? 0 : (hParent - h) / 2;
     let left = w > wParent ? 0 : (wParent - w) / 2;
     $('#edrFrame').parent().css('top', top + 'px');

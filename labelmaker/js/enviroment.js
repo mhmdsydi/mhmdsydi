@@ -1,12 +1,12 @@
 
 function zoomSection_Click() {
     $("#btnFitHeight").on('click', function (event) {
-        let zoom = ($('#parent_frame').height() - 60 - 2 * getScrollbarWidth()) / ($('#edrFrame').height());
+        let zoom = ($('#parent_frame').outerHeight() - 60 - 2 * getScrollbarWidth()) / ($('#edrFrame').outerHeight());
         $('#range_zoom').val(100*zoom);
         frame.setZoom(zoom);
     });
     $("#btnFitWidth").on('click', function (event) {
-        let zoom = ($('#parent_frame').width() - 60 - 2 * getScrollbarWidth()) / ($('#edrFrame').width());
+        let zoom = ($('#parent_frame').outerWidth() - 60 - 2 * getScrollbarWidth()) / ($('#edrFrame').outerWidth());
         $('#range_zoom').val(100*zoom);
         frame.setZoom(zoom);
     });

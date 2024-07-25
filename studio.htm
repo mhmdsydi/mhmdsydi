@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio</title>
+    <link rel="shortcut icon" href="labelmaker/img/favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="labelmaker/font-awesome/5/css/all.min.css">
+    <link rel="stylesheet" href="labelmaker/css/reset.css?v=1.3" />
+    <link rel="stylesheet" href="labelmaker/css/studio.css?v=1.3" />
+    <link rel="stylesheet" href="labelmaker/css/common.css?v=1.3" />
+    <link rel="stylesheet" href="labelmaker/css/header.css?v=1.3" />
+    <link rel="stylesheet" href="labelmaker/css/sidebar.css?v=1.3" />
+    <link rel="stylesheet" href="labelmaker/css/topbar.css?v=1.3" />
+    <link rel="stylesheet" href="labelmaker/css/bottombar.css?v=1.3" />
+    <link rel="stylesheet" href="labelmaker/css/tooltip.css?v=1.3" />
+    <link rel="stylesheet" href="labelmaker/css/canvas.css?v=1.3" />
+    <link rel="stylesheet" href="labelmaker/css/dropdown.css?v=1.3" />
+    <link rel="stylesheet" href="labelmaker/css/drag.css?v=1.3" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
+</head>
+
+<body spellcheck="false">
+    <template id="lm_template_del_lock">
+        <i contenteditable="false" class="far fa-undo-alt lm_btnRotate"></i>
+        <div class="tdot b-r"></div>
+        <div class="tdot t-r"></div>
+        <div class="tdot b-l"></div>
+        <div class="tdot t-l"></div>
+    </template>
+    <main class="std">
+        <div class="header">
+            <header>
+                <div>
+                    <ul>
+                        <li class="flex-c gap-5"><img src="labelmaker/img/logo.png" style="width: 28px;">
+                            <img alt="" src="labelmaker/img/svg/slash.svg" style="height: 22px;">
+                            <a href="studio.htm" class="fs-18 text-white">Studio</a>
+                        </li>
+                        <li class="m-l-8"><button type="button" class="btnHeaderL">New design</button></li>
+                        <li class="m-l-8"><button type="button" class="btnHeaderL"><i
+                                    class="fal fa-cloud m-r-8"></i>Save</button></li>
+                    </ul>
+                    <input id="stdName" name="stdName" placeholder="Untitled design" maxlength="255" autocomplete="off">
+                    <ul>
+                        <li><button type="button" class="btnHeaderR r-Tooltip r-Tooltip--nowrap r-Tooltip--bottom"
+                                data-r-tooltip="Share design"><i class="far fa-share-alt"></i></button></li>
+                        <li class="m-l-8"><button type="button"
+                                class="btnHeaderR btnHeaderR r-Tooltip r-Tooltip--nowrap r-Tooltip--bottom"
+                                data-r-tooltip="Download"><i class="far fa-arrow-to-bottom"></i></button></li>
+                        <li class="m-l-8"><button type="button" class="btnHeaderRprint"> Order prints</button></li>
+                        <li class="m-l-8"><i class="fal fa-user m-l-8"></i></li>
+                    </ul>
+                </div>
+            </header>
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <button id="btnSidebarDesigns" type="button">
+                        <div>
+                            <i class="far fa-pencil-ruler"></i>
+                            <span>Designs</span>
+                        </div>
+                    </button>
+                </li>
+                <li>
+                    <button type="button">
+                        <div>
+                            <i class="far fa-text-size"></i>
+                            <span>Text</span>
+                        </div>
+                    </button>
+                </li>
+                <li>
+                    <button type="button">
+                        <div>
+                            <i class="far fa-image-polaroid"></i>
+                            <span>Photos</span>
+                        </div>
+                    </button>
+                </li>
+                <li>
+                    <button type="button">
+                        <div>
+                            <svg fill="currentColor" height="24" viewBox="0 0 1040 1000" width="24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M835 313C779 154 627 40 449 40 222 40 40 224 40 449c0 227 182 409 409 409 69 0 135-18 192-48-35-4-63-22-81-48-35 12-72 19-111 19-184 0-332-148-332-332 0-182 148-332 332-332 157 0 290 111 324 258l28-34c10-12 22-21 34-28zm0 0l2 4 3-2-2-3-3 1zM641 810l2 4 11-7-13-1v4zm-81-48l3-2-1-3-3 1 1 4zm213-387l-4 1 2 8 5-6-3-3zm28-34l4 2-4-2zM449 44c176 0 326 113 382 271l7-3C782 151 628 36 449 36v8zM44 449C44 226 224 44 449 44v-8C220 36 36 221 36 449h8zm405 405C224 854 44 673 44 449h-8c0 229 184 413 413 413v-8zm190-48c-57 31-121 48-190 48v8c70 0 136-18 194-48l-4-8zm2 0c-33-3-61-22-78-46l-6 4c18 27 47 46 83 50l1-8zm-192-21c39 0 77-7 112-19l-2-8c-35 12-72 19-110 19v8zM113 449c0 186 150 336 336 336v-8c-182 0-328-147-328-328h-8zm336-336c-186 0-336 152-336 336h8c0-180 146-328 328-328v-8zm328 261c-35-149-169-261-328-261v8c155 0 286 110 320 255l8-2zm-1 4l29-35-7-5-28 35 6 5zm29-35c9-12 20-20 32-26l-4-7c-13 6-24 16-35 28l7 5zm31 159L689 681h73c11 0 22 5 29 14s10 21 7 32l-29 125 151-183h-73c-11 0-22-5-29-14s-10-20-7-31l25-122zm-6-110c36-45 108-10 97 47l-33 155h61c50 0 77 58 45 96L772 965c-37 46-110 9-96-48l38-161h-60c-50 0-77-58-45-96l221-268zM265 566c36 39 97 79 184 79 85 0 146-40 182-79 15-16 15-42-2-57s-42-13-57 4c-24 25-65 52-123 52-60 0-101-27-125-52-15-17-40-19-57-4s-17 41-2 57zm56-176c30 0 53-24 53-53s-23-53-53-53-53 24-53 53 23 53 53 53zm256-106c-30 0-53 24-53 53s23 53 53 53 53-24 53-53-23-53-53-53z">
+                                </path>
+                            </svg>
+                            <span>Graphics</span>
+                        </div>
+                    </button>
+                </li>
+                <li>
+                    <button type="button">
+                        <div>
+                            <i class="far fa-shapes"></i>
+                            <span>Shapes</span>
+                        </div>
+                    </button>
+                </li>
+                <li>
+                    <button type="button">
+                        <div>
+                            <svg fill="currentColor" height="24" viewBox="0 0 1000 1000" width="24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M875 219H750v-63c0-68-57-125-125-125H375c-70 0-125 57-125 125v63H125C55 219 0 275 0 344v500c0 70 55 125 125 125h750c68 0 125-55 125-125V344c0-69-57-125-125-125zm-500-94h250c16 0 31 16 31 31v63H344v-63c0-15 13-31 31-31zM125 312h750c16 0 31 16 31 32v187H94V344c0-16 13-32 31-32zm750 563H125c-18 0-31-14-31-31V625h281v31c0 35 27 63 63 63h125c33 0 62-28 62-63v-31h281v219c0 17-15 31-31 31z">
+                                </path>
+                            </svg>
+                            <span>Brand Kits</span>
+                        </div>
+                    </button>
+                </li>
+                <li>
+                    <button type="button">
+                        <div>
+                            <i class="far fa-file-upload"></i>
+                            <span>Upload</span>
+                        </div>
+                    </button>
+                </li>
+            </ul>
+            <div id="sidebar_panelDesigns" class="sidebar-panel">
+                <div class="sidebar-panel-header">
+                    <h3>Designs</h3><button id="btnbtnSidebarDesignsClose"><i
+                            class="fal fa-times fs-18 m-l-8"></i></button>
+                </div>
+                <div class="sidebar-panel-body">
+
+                </div>
+            </div>
+        </div>
+        <div class="topbar">
+            <div>
+                <ul>
+                    <li>
+                        <div class="btnLbl"><span>W</span><input id="txtEditorW" value="1200"></div>
+                        <div class="btnLbl"><span>H</span><input id="txtEditorH" value="1200"></div>
+                        <div class="divSelect">
+                            <!-- -->
+                            <div class="select_wrap">
+                                <ul class="ul_default">
+                                    <li value="in">inch</li>
+                                </ul>
+                                <ul id="ulFrameUnit" class="ul_select">
+                                    <li value="in">inch</li>
+                                    <li value="mm">mm</li>
+                                    <li value="px">pixel</li>
+                                </ul>
+                            </div>
+                            <!-- -->
+                        </div>
+                    </li>
+                    <li>
+                        <div class="divColor" target-value="#FFEECC" target-element="edrFrame"
+                            target-css="background-color">
+                            <div class="divColorHandler">
+                            </div>
+                            <div class="divColorPicker">
+                            </div>
+                        </div>
+                        <div class="labelOnly">Background</div>
+                    </li>
+                    <li>
+                        <div class="divColor" target-value="#ffffff00" target-element="edrFrame"
+                            target-css="border-color" target-border="0">
+                            <div class="divColorHandler">
+                            </div>
+                            <div class="divColorPicker">
+                            </div>
+                        </div>
+                        <div class="labelOnly">Border</div>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul id="ul_element_menu">
+                    <li>
+                        <div><button id="btnTransparency"
+                                class="btnMenuItem r-Tooltip r-Tooltip--nowrap r-Tooltip--bottom"
+                                data-r-tooltip="Transparency">
+                                <img alt="" src="labelmaker/img/svg/trancparency.svg" style="height: 22px;">
+                            </button></div>
+                        <div><button id="btnArrangment"
+                                class="btnMenuItem r-Tooltip r-Tooltip--nowrap r-Tooltip--bottom"
+                                data-r-tooltip="Arrangment">
+                                <img alt="" src="labelmaker/img/svg/arrangment.svg" style="height: 22px;">
+                            </button></div>
+                        <div><button id="btnFlip" class="btnMenuItem r-Tooltip r-Tooltip--nowrap r-Tooltip--bottom"
+                                data-r-tooltip="Flip">
+                                <img alt="" src="labelmaker/img/svg/flip.svg" style="height: 22px;">
+                            </button></div>
+                        <div><button id="btnPosition" class="btnMenuItem r-Tooltip r-Tooltip--nowrap r-Tooltip--bottom"
+                                data-r-tooltip="Position">
+                                <img alt="" src="labelmaker/img/svg/position.svg" style="height: 22px;">
+                            </button></div>
+                        <div><button id="btnLock" class="btnMenuItem r-Tooltip r-Tooltip--nowrap r-Tooltip--bottom"
+                                data-r-tooltip="Lock">
+                                <img alt="" src="labelmaker/img/svg/lock.svg" style="height: 22px;">
+                            </button></div>
+                        <div><button id="btnDelete" class="btnMenuItem r-Tooltip r-Tooltip--nowrap r-Tooltip--bottom"
+                                data-r-tooltip="Delete">
+                                <img alt="" src="labelmaker/img/svg/delete.svg" style="height: 22px;">
+                            </button></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="jsx-3498359145 canvas">
+            <div class="c1">
+                <div class="c2">
+                    <div class="c4">
+                        <div class="c5">
+                            <div id="parent_frame" class="c6">
+                                <div id="forUnitRatioPixelMM"></div>
+                                <div id="edrFrame" class="c8">
+                                    <div id="elm4" class="objecty"
+                                        style="left: 36.8342mm;top: 18.89mm;font-family: Damion;font-size: 18mm;color: black;font-weight: 400;padding: 1mm;z-index: 1;"
+                                        contenteditable="true">
+                                        Vinny's
+                                    </div>
+                                    <div id="elm3" class="objecty"
+                                        style="left: 32.5376mm;top: 41.7504mm;width: 57.728mm;aspect-ratio: 300 / 83;"
+                                        contenteditable="false">
+
+                                    </div>
+
+                                    <div id="elm2" class="objecty"
+                                        style=" left: 44.8342mm;top: 41.89mm;font-family: Rubik; font-size: 12mm; color: white; font-weight: 900;padding: 1mm;"
+                                        contenteditable="true">
+                                        PIZZA
+                                    </div>
+                                    <div id="elm1" class="objecty"
+                                        style=" left: 14.16mm;top: 25.74mm;width: 30mm; height: 39mm;">
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottombar">
+            <div>
+                <ul>
+                    <li>
+                        <button type="button" class="btnMenuItem r-Tooltip r-Tooltip--nowrap r-Tooltip--top"
+                            data-r-tooltip="Undo"><i class="disable far fa-undo-alt"></i></button>
+                        <button type="button" class="btnMenuItem r-Tooltip r-Tooltip--nowrap r-Tooltip--top"
+                            data-r-tooltip="Redo"><i class="disable far fa-redo-alt"></i></button>
+                    </li>
+                    <li>
+                        <input id="range_zoom" max="200" min="10" type="range" class="zoom-range" value="50">
+                        <div id="range_zoom_label" class="labelOnly">50%</div>
+                    </li>
+                    <li>
+                        <div><button id="btnActualSize" class="btnMenuItem r-Tooltip r-Tooltip--nowrap r-Tooltip--top"
+                                data-r-tooltip="Actual Size"> <img alt="" src="labelmaker/img/svg/actualsize.svg"
+                                    style="height: 28px; width: 28px;">
+                            </button></div>
+                        <div><button id="btnFitWidth" class="btnMenuItem r-Tooltip r-Tooltip--nowrap r-Tooltip--top"
+                                data-r-tooltip="Fit to Width">
+                                <img alt="" src="labelmaker/img/svg/fitwidth.svg" style="height: 28px; width: 28px;">
+                            </button></div>
+                        <div><button id="btnFitHeight" class="btnMenuItem r-Tooltip r-Tooltip--nowrap r-Tooltip--top"
+                                data-r-tooltip="Fit to Height"><img alt="" src="labelmaker/img/svg/fitheight.svg"
+                                    style="height: 28px; width: 28px;transform: rotate(90deg);">
+                            </button></div>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </main>
+</body>
+<script type="text/javascript" src="labelmaker/js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="labelmaker/js/utils.js"></script>
+<script type="text/javascript" src="labelmaker/js/acolorpicker.js"></script>
+<script type="text/javascript" src="labelmaker/js/frame.js"></script>
+<script type="text/javascript" src="labelmaker/js/colorHandler.js"></script>
+<script type="text/javascript" src="labelmaker/js/enviroment.js"></script>
+<script type="text/javascript" src="labelmaker/js/dropdown.js"></script>
+<script type="text/javascript" src="labelmaker/js/sidebars.js"></script>
+<script>
+    let mouse = { x: 0, y: 0 };
+    let offset = { left: 0, top: 0 };
+    // let element;
+    let target;
+    function onDrag(e) {
+        if (!e) {
+            var e = window.event;
+        }
+        if (!target) return;
+        target.css('left', 1 / frame.zoom * (e.pageX - mouse.x) + "px");
+        target.css('top', 1 / frame.zoom * (e.pageY - mouse.y) + "px");
+    }
+    function onDrop(e) {
+        if (!e) {
+            var e = window.event;
+        }
+        document.onpointermove = null;
+    }
+    function removeTarget() {
+        if (target) target.removeClass("Target");
+        $(".lm_btnRotate").remove();
+        $(".tdot").remove();
+        $('#ul_element_menu').hide();
+        target = null;
+        document.onpointermove = null;
+        document.onpointerup = null;
+    }
+    function setTarget(id) {
+        if (target && target.attr('id') == id) {
+            return;
+        }
+
+        if (target && target.attr('id') != id) {
+            removeTarget();
+
+        }
+        if (!target) {
+            target = $("#" + id);
+
+            var myTemplate = $("#lm_template_del_lock").html().trim();
+            var myTemplateClone = $(myTemplate);
+            target.append(myTemplateClone);
+            target.removeClass("Target");
+            target.addClass("Target");
+            $('#ul_element_menu').show();
+
+        }
+
+        // $(".lm_btnRotate").on("pointerdown", onlm_btnRotateClick);
+    }
+    function onStartDrag(e) {
+
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        // if (!e) {
+        //     var e = window.event;
+        // }
+        // if (e.target) {
+        //     element = e.target;
+        // } else if (e.srcElement) {
+        //     element = e.srcElement;
+        // }
+        if (e.layerX || e.layerX === 0) {
+            mouse.x = e.layerX;
+            mouse.y = e.layerY;
+        } else if (e.offsetX || e.offsetX === 0) {
+            mouse.x = e.offsetX;
+            mouse.y = e.offsetY;
+        }
+        let bw = frame.div.css('border-width');
+        if (bw) {
+            mouse.x += parseInt(bw);
+            mouse.y += parseInt(bw);
+        }
+        mouse.x *= frame.zoom;
+        mouse.y *= frame.zoom;
+        mouse.x += frame.div.offset().left;
+        mouse.y += frame.div.offset().top;
+        let id = $(e.target).attr('id');
+        let isObjecty = $(e.target).hasClass('objecty');
+        // element = $(e.target);
+        if (!id || !isObjecty) {
+            let element = $(e.target).parents('.objecty');
+            id = element.attr('id');
+        }
+
+        setTarget(id);
+        document.onpointermove = onDrag;
+        document.onpointerup = onDrop;
+    }
+
+    $(function (e) {
+        frame.fooLoad();
+        //disableRightclick();
+        frame.init();
+        assignComponentToObjects();
+        divColorHandler_click();
+        divCanvas_click();
+        zoomSection_Click();
+
+        requestWakeLock();
+        //
+        $(".objecty").on("pointerdown", onStartDrag);
+        $("#parent_frame").on("pointerdown", (e) => {
+            removeTarget();
+        });
+
+
+    });
+</script>
+
+</html>
